@@ -68,3 +68,4 @@ async def registrar(provincia, cantones:dict):
     """
     return{"provincia": provincia, "cantones":cantones}
 
+
