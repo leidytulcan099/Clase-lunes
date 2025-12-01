@@ -1,0 +1,25 @@
+{
+    // Configuración de depuración para FastAPI
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/venv/Scripts/uvicorn.exe",
+            "args": [
+                "demo_api.main2:app",
+                "--reload",
+                "--host",
+                "127.0.0.1",
+                "--port",
+                "8000"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "jinja": true
+        }
+    ]
+}
