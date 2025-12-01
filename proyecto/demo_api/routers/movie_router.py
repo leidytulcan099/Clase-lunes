@@ -1,17 +1,13 @@
 import datetime
 from fastapi import APIRouter, FastAPI, HTTPException, Path, Query
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from typing import List, Literal, Optional
+
+from proyecto.demo_api.models.movie_model import Movie
 
 app = FastAPI()
 router = APIRouter()
 
-# Modelo de película
-class Movie(BaseModel):
-    id: int
-    nombre: str = Field(..., min_length=3, max_length=100)
-    categoria: Literal["accion", "comedia", "drama"]
-    año: int = Field(..., le=datetime.date.today().year, ge=1900)
 
 # Base de datos inicial
 movies_array = [
@@ -68,9 +64,3 @@ async def search_movies(
 
 # Incluir router en app
 app.include_router(router)
-
-
-
-
-
-
