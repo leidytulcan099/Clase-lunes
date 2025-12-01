@@ -6,8 +6,8 @@ app = FastAPI()
 
 app.title = "Ejmplos basicos"
 app.version = "1.0.0"
-app.include_router(movie_router) 
 
+app.include_router(prefix="/v1", router=router) 
 app.include_router(router_fraccion)
 
 
